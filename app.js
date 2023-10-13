@@ -42,10 +42,30 @@ function gameLogic() {
       break;
     } else {
       if (userN < machineVal) {
-        return "Ooops, Wrong Guess. Re-Enter ---Hint: Smaller number then Random number.";
+        return "Ooops, Wrong Guess. Re-Enter ---Hint: Smaller number than Random number.";
       } else {
-        return "Ooops, Wrong Guess. Re-Enter ---Hint: Higher number then Random number.";
+        return "Ooops, Wrong Guess. Re-Enter ---Hint: Higher number than Random number.";
       }
     }
   }
 }
+
+// to trigger button click using enter key
+
+// for first input field
+const input1 = document.querySelector('input#max');
+input1.addEventListener('keyup',event=>{
+  if (event.key === 'Enter'){
+    // trigger click on btn1
+    btn1.click();
+  }
+})
+
+// for second input field
+const input2 = document.querySelector('input#userVal');
+input2.addEventListener('keyup',event=>{
+  if (event.key === 'Enter'){
+    // call guessGame()
+    guessGame();
+  }
+})
