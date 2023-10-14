@@ -38,7 +38,6 @@ function gameLogic() {
     //   }
     if (userN == machineVal) {
       return "You Guess Is correct.You Won.";
-      break;
     } else {
       if (userN < machineVal) {
         return "Ooops, Wrong Guess. Re-Enter ---Hint: Higher number then Random number.";
