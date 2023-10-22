@@ -2,21 +2,26 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Lobster', sans-serif;
 }
 
 html {
-    --s: 200px; /* control the size */
-    --c: #fff; /* first color */
-    
-    --_g: #0000 8%,var(--c) 0 17%,#0000 0 58%;
-    background: 
-      linear-gradient(135deg,#0000 20.5%,var(--c) 0 29.5%,#0000 0) 0 calc(var(--s)/4),
-      linear-gradient( 45deg,var(--_g)) calc(var(--s)/2) 0,
-      linear-gradient(135deg,var(--_g),var(--c) 0 67%,#0000 0),        
-      linear-gradient( 45deg,var(--_g),var(--c) 0 67%,#0000 0 83%,var(--c) 0 92%,#0000 0),
-      #1095c1; /* second color */
-    background-size: var(--s) var(--s);
-  }
+  --s: 82px; /* control the size */
+  --c1: #b2b2b2;
+  --c2: #ffffff;
+  --c3: #d9d9d9;
+  
+  --_g: var(--c3) 0 120deg,#0000 0;
+  background:
+    conic-gradient(from -60deg at 50% calc(100%/3),var(--_g)),
+    conic-gradient(from 120deg at 50% calc(200%/3),var(--_g)),
+    conic-gradient(from  60deg at calc(200%/3),var(--c3) 60deg,var(--c2) 0 120deg,#0000 0),
+    conic-gradient(from 180deg at calc(100%/3),var(--c1) 60deg,var(--_g)),
+    linear-gradient(90deg,var(--c1)   calc(100%/6),var(--c2) 0 50%,
+                          var(--c1) 0 calc(500%/6),var(--c2) 0);
+  background-size: calc(1.732*var(--s)) var(--s);
+}
+
 /* 
   html{
     background: rgb(255,0,0);
@@ -92,7 +97,6 @@ h1:hover::before{
 }
 
 input{
-  /* flex: 3; */
   height: 4rem;
   padding: 1.2rem;
   width: 65%;
@@ -109,10 +113,9 @@ button{
   height: 4rem;
   border-radius: 1rem;
   font-size: 1.3rem;
-  /* flex: 1; */
   border: 2px solid black;
   background-color: white;
-
+  transition: all 4s;
 }
 
 button:active{
@@ -121,6 +124,7 @@ button:active{
 }
 button:hover{
   font-size: 1.7rem;
+  background-color: blueviolet;
 }
 
 
@@ -141,7 +145,13 @@ button:hover{
 }
 
 
-
+.time{
+  width: 20%;
+  margin: 2rem auto;
+  border: 4px solid blueviolet;
+  text-align: center;
+  font-size: 3rem;
+}
 
 @media(width<=600px){
   input{
